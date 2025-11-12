@@ -40,7 +40,7 @@ public class MarioController : MonoBehaviour
 
         if (Runinput == 0 && marioRigid.linearVelocityY == 0)
         {
-            marioRigid.linearDamping = 3;
+            marioRigid.linearDamping = 8;
         }
         else
         {
