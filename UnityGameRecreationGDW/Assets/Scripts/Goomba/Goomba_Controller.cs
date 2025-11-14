@@ -31,4 +31,12 @@ public class Goomba_Controller : MonoBehaviour
             yr.Rotate(0f, 180f, 0f);
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
