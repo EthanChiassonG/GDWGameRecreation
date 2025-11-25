@@ -2120,6 +2120,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraRotationController
   player: {fileID: 1632529638}
   offset: {x: 2, y: 0.5, z: -20}
+--- !u!1 &1454327029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2630806971743879778, guid: 3b1d40081c3b13a48b6c5735c1a47a04, type: 3}
+  m_PrefabInstance: {fileID: 1110283820248148660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1472998325
 GameObject:
   m_ObjectHideFlags: 0
@@ -2399,6 +2404,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4927945464105374456, guid: 3b1d40081c3b13a48b6c5735c1a47a04, type: 3}
   m_PrefabInstance: {fileID: 1110283820248148660}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1632529643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454327029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f0109ab9afa7784183dd291b2ae375c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MarioState
+  hp: 2
+  stompHeightOffset: 0.2
+  stompBounceVelocity: 8
+  damageCooldown: 1
 --- !u!1 &1650633979
 GameObject:
   m_ObjectHideFlags: 0
@@ -3461,7 +3482,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2630806971743879778, guid: 3b1d40081c3b13a48b6c5735c1a47a04, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1632529643}
   m_SourcePrefab: {fileID: 100100000, guid: 3b1d40081c3b13a48b6c5735c1a47a04, type: 3}
 --- !u!1001 &2971887816279425527
 PrefabInstance:
