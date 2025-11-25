@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 8982426445112106643}
   - component: {fileID: 1821196759303680208}
   - component: {fileID: 8317522287812219211}
-  m_Layer: 0
+  - component: {fileID: 8685997850304417595}
+  m_Layer: 7
   m_Name: Bouncy Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -82,8 +83,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 0.3915094, g: 0.6619469, b: 1, a: 1}
+  m_Sprite: {fileID: 1098286324429101383, guid: 499cafb21b3d6cc42bcb68b19ec6e2a5, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -155,7 +156,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &8317522287812219211
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -168,3 +169,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 413691a8046cb3a49b692e4eb9569d91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BasicGravity
+--- !u!114 &8685997850304417595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2438450936801569677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8425697a900ede546b438fab8d17a367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FireballBehavior
+  travelspeed: 1
+  lifetime: 3

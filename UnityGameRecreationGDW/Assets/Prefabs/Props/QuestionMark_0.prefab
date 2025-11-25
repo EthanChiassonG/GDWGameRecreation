@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &384797806944096822
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3844578141709959318}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3844578141709959318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 384797806944096822}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.001, y: 0.634, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2430193796585894851}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &922906118923335179
 GameObject:
   m_ObjectHideFlags: 0
@@ -11,6 +42,7 @@ GameObject:
   - component: {fileID: 2430193796585894851}
   - component: {fileID: 2808396220779876929}
   - component: {fileID: 6284632424031198442}
+  - component: {fileID: 7101501543485454951}
   m_Layer: 0
   m_Name: QuestionMark_0
   m_TagString: Untagged
@@ -30,7 +62,8 @@ Transform:
   m_LocalPosition: {x: 5.297, y: -0.465, z: 0}
   m_LocalScale: {x: 1.25, y: 1.25, z: 1.25}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 3844578141709959318}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2808396220779876929
@@ -137,3 +170,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.64, y: 0.64}
   m_EdgeRadius: 0
+--- !u!114 &7101501543485454951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 922906118923335179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e03bc9cd3d29b1f4e9b7f803e2fdb9b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemBoxBehavior
+  Contains: {fileID: 0}
+  Spawnspot: {fileID: 3844578141709959318}

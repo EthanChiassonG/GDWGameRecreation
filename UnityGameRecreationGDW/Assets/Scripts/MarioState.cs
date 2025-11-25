@@ -10,6 +10,11 @@ public class MarioState : MonoBehaviour
     public float stompHeightOffset = 0.25f;   // how much higher Mario must be
     public float stompBounceVelocity = 8f;    // bounce after stomp
 
+    public GameObject Fireball;
+    public GameObject Mario;
+    public Vector3 Offset = new Vector3(0, 1, 0);
+    public Vector3 InvertedOffset = new Vector3(0, -2, 0);
+
     [Header("Damage cooldown")]
     public float damageCooldown = 1f;         // seconds of invulnerability after hit
     private float lastHitTime = -999f;        // time of last damage
@@ -19,6 +24,14 @@ public class MarioState : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.LeftShift) && hp >= 3)
+        {
+            ShootFireball();
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -47,6 +60,28 @@ public class MarioState : MonoBehaviour
                 // Side / bottom hit -> damage Mario (with cooldown)
                 TakeDamage();
             }
+
+        }
+        if (other.CompareTag("Mushroom"))
+        {
+            if (hp <= 2)
+            {
+                hp = 2;
+            }
+            Destroy(other);
+        }
+        if (other.CompareTag("FireFlower"))
+        {
+            if (hp <= 3)
+            {
+                hp = 3;
+            }
+            Destroy(other);
+        }
+
+        if (collision.gameObject.CompareTag("Kill"))
+        {
+            Die();
         }
     }
 
@@ -76,4 +111,22 @@ public class MarioState : MonoBehaviour
         Scene current = SceneManager.GetActiveScene();
         SceneManager.LoadScene(current.buildIndex);
     }
+
+    private void ShootFireball()
+    {
+        Vector3 spawnPointPosition = transform.position;
+
+        if(rb.gravityScale <= 0)
+        {
+            Vector3 finalSpawnPosition = spawnPointPosition + InvertedOffset;
+            Instantiate(Fireball, finalSpawnPosition, transform.rotation);
+        }
+        else
+        {
+            Vector3 finalSpawnPosition = spawnPointPosition + Offset;
+            Instantiate(Fireball, finalSpawnPosition, transform.rotation);
+        }
+        
+    }
+
 }
