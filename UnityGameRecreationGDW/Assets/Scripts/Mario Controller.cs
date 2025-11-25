@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 public class MarioController : MonoBehaviour
 {
     Rigidbody2D marioRigid;
+    public GameObject victory;
     Transform Mariotrans;
     float Gravity;
     public float moveSpeed;
@@ -12,13 +14,16 @@ public class MarioController : MonoBehaviour
     public float Runinput;
     public float JumpForce;
     public float MaxSpeed;
+    private bool hasWon = false;
 
+    
     private bool m_IsGrounded = false;
     private bool JumpInput;
     private bool GravityFlip = false;
 
     void Start()
     {
+        Time.timeScale = 1f;
         marioRigid = GetComponent<Rigidbody2D>();
         Mariotrans = GetComponent<Transform>();
         Gravity = marioRigid.gravityScale;
@@ -27,6 +32,11 @@ public class MarioController : MonoBehaviour
 
     void Update()
     {
+
+        if (hasWon == false)
+        {
+
+        
         Runinput = Input.GetAxis("Horizontal");
 
         if (Input.GetKey(KeyCode.W))
@@ -54,6 +64,18 @@ public class MarioController : MonoBehaviour
         else
         {
             GravityFlip = false;
+        }
+
+        }
+        if(hasWon == true)
+        {
+            Time.timeScale = 0.2f;
+            if (Input.GetKey(KeyCode.Space))
+            {
+                Scene current = SceneManager.GetActiveScene();
+                SceneManager.LoadScene(current.buildIndex);
+                
+            }
         }
     }
 
@@ -122,6 +144,12 @@ public class MarioController : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         m_IsGrounded = true;
+        GameObject other = collision.gameObject;
+        if (other.CompareTag("Flag"))
+        {
+            hasWon=true;
+            victory.SetActive(true);
+        }
     }
 
     void GravityFlipper()

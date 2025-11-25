@@ -1,14 +1,18 @@
+using System.Threading;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class BasicGravity : MonoBehaviour
 {
     float Gravity;
     Rigidbody2D Rigid;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Rigid = GetComponent<Rigidbody2D>();
         Gravity = Rigid.gravityScale;
+
     }
 
     // Update is called once per frame
@@ -16,8 +20,10 @@ public class BasicGravity : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
+           
             Gravity = -Gravity;
-            Rigid.gravityScale = Gravity; 
+            Rigid.gravityScale = Gravity;
+           
         }
     }
-    }
+}
