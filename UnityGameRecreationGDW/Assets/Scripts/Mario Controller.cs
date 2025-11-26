@@ -48,15 +48,6 @@ public class MarioController : MonoBehaviour
             JumpInput = false;
         }
 
-        if (Runinput == 0 && marioRigid.linearVelocityY == 0)
-        {
-            marioRigid.linearDamping = 8;
-        }
-        else
-        {
-            marioRigid.linearDamping = 1;
-        }
-
         if (Input.GetKey(KeyCode.Space))
         {
             GravityFlip = true;
@@ -95,6 +86,14 @@ public class MarioController : MonoBehaviour
         if (GravityFlip && m_IsGrounded)
         {
             GravityFlipper();
+        }
+        if (Runinput == 0 && marioRigid.linearVelocityY == 0)
+        {
+            marioRigid.linearDamping = 16;
+        }
+        else
+        {
+            marioRigid.linearDamping = 1.3f;
         }
     }
     void Movement()
@@ -143,7 +142,26 @@ public class MarioController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        m_IsGrounded = true;
+        float marioY = transform.position.y;
+        float objectY = collision.transform.position.y;
+        
+        if(marioRigid.gravityScale >= 0)
+        {
+            if (marioY >= objectY)
+            {
+                m_IsGrounded = true;
+            }
+        }
+        
+        if(marioRigid.gravityScale <= 0)
+        {
+            if (marioY <= objectY)
+            {
+                m_IsGrounded = true;
+            }
+        }
+        
+        
         GameObject other = collision.gameObject;
         if (other.CompareTag("Flag"))
         {
@@ -156,6 +174,7 @@ public class MarioController : MonoBehaviour
     {
         Gravity = -Gravity;
         marioRigid.gravityScale = Gravity;
+        Mariotrans.Rotate(0, 0, 180);
         m_IsGrounded = false;
     }
 }

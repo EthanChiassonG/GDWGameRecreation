@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class ItemBoxBehavior : MonoBehaviour
+public class InvertedItemBlock : MonoBehaviour
 {
     public GameObject Contains;
     public Transform Spawnspot;
@@ -23,7 +23,7 @@ public class ItemBoxBehavior : MonoBehaviour
             float boxY = transform.position.y;
             float marioY = other.transform.position.y;
 
-            if (boxY > marioY && !Used)
+            if (boxY < marioY && !Used)
             {
                 Instantiate(Contains, (Spawnspot));
                 Used = true;

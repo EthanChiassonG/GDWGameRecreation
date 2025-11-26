@@ -126,9 +126,9 @@ MonoBehaviour:
   rb: {fileID: 2486736117928456995}
   hammerprefab: {fileID: 7858538506611964933, guid: 009e06df224387d47a8aafefb5869201, type: 3}
   throwPoint: {fileID: 4342409223690458784}
-  moveSpeed: 2
+  moveSpeed: 0.2
   moveSwitchInterval: 2
-  jumpForce: 7
+  jumpForce: 3
   jumpInterval: 3.5
   throwInterval: 2.5
   throwForwardForce: 5
