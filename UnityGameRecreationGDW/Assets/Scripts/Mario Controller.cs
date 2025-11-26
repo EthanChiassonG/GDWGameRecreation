@@ -106,22 +106,22 @@ public class MarioController : MonoBehaviour
         if (Runinput > 0 && marioRigid.gravityScale > 0)
         {
             marioRigid.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
-            Mariotrans.rotation = Quaternion.Euler(0, 180, 0);
+            Mariotrans.rotation = Quaternion.Euler(0, 0, 0);
         }
         if (Runinput > 0 && marioRigid.gravityScale < 0)
         {
             marioRigid.AddForce(Vector2.right * moveSpeed, ForceMode2D.Force);
             Mariotrans.rotation = Quaternion.Euler(0, 180, 180);
         }
-        if (Runinput < 0)
+        if (Runinput < 0 && marioRigid.gravityScale > 0)
         {
             marioRigid.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
-            Mariotrans.rotation = Quaternion.Euler(0, 0, 0);
+            Mariotrans.rotation = Quaternion.Euler(0, 180, 0);
         }
-        if (Runinput < 0)
+        if (Runinput < 0 && marioRigid.gravityScale < 0)
         {
             marioRigid.AddForce(Vector2.left * moveSpeed, ForceMode2D.Force);
-            Mariotrans.rotation = Quaternion.Euler(0, 0, 180);
+            Mariotrans.rotation = Quaternion.Euler(0,0, 180);
         }
     }
 

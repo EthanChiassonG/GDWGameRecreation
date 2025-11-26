@@ -394,7 +394,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: beeea4c41a007b144999ffa1381ddbdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Hammer
-  damage: 1
+  damage: 0.3
   lifeTime: 4
 --- !u!114 &5111358085239158326
 MonoBehaviour:

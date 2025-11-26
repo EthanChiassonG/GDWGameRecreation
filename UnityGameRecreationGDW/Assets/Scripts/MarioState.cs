@@ -9,6 +9,9 @@ public class MarioState : MonoBehaviour
     [Header("Stomp logic")]
     public float stompHeightOffset = 0.25f;   // how much higher Mario must be
     public float stompBounceVelocity = 8f;    // bounce after stomp
+    [SerializeField] GameObject Small;
+    [SerializeField] GameObject Big;
+    [SerializeField] GameObject fireBig;
 
     public GameObject Fireball;
     public GameObject Mario;
@@ -32,6 +35,24 @@ public class MarioState : MonoBehaviour
         {
             ShootFireball();
         }
+        if (hp == 1)
+        {
+            Small.SetActive(true);
+            Big.SetActive(false);
+            fireBig.SetActive(false);
+        }
+        else if (hp == 2)
+        {
+            Small.SetActive(false);
+            Big.SetActive(true);
+            fireBig.SetActive(false);
+        }
+        else if (hp == 3)
+        {
+            Small.SetActive(false);
+            Big.SetActive(false);
+            fireBig.SetActive(true);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -39,7 +60,7 @@ public class MarioState : MonoBehaviour
         GameObject other = collision.gameObject;
 
         // Only handle Goombas for now
-        if (other.name.Contains("Goomba"))
+        if (other.CompareTag("Enemy"))
         {
             float marioY = transform.position.y;
             float goombaY = other.transform.position.y;
