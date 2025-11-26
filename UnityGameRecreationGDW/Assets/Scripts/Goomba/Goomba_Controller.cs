@@ -14,9 +14,13 @@ public class Goomba_Controller : MonoBehaviour
     public float speed;
     public int direction = 1; // to flip direction of goomba when colliding with wall
 
+    private float currentGrav;
+    private float NewestGrav;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentGrav = rb.gravityScale;
         yr = GetComponent<Transform>();
         spriteflipper = Sprite.GetComponent<Transform>();
         MaxSpinspeed = Spinspeed;
@@ -28,10 +32,9 @@ public class Goomba_Controller : MonoBehaviour
         if (Spinspeed <= 0)
         {
             StepCount += 1;
-            Spinspeed = MaxSpinspeed; 
+            Spinspeed = MaxSpinspeed;
             GoombaRotate();
         }
-
     }
 
     private void FixedUpdate()
@@ -41,21 +44,22 @@ public class Goomba_Controller : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Wall"))
+       
+        if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Enemy"))
         {
             direction *= -1; // Flip direction
-            yr.Rotate(0f, 180f, 0f);
         }
+       
     }
     private void GoombaRotate()
     {
         if (StepCount % 2 == 0)
         {
-            spriteflipper.rotation = Quaternion.Euler(0, 0, 0);
+            spriteflipper.Rotate(0f, 180f, 0f);
         }
         else
         {
-            spriteflipper.rotation = Quaternion.Euler(0, 180, 0);
+            spriteflipper.Rotate(0f, 180f, 0f);
         }
     }
 }

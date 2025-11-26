@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2903512658553393062}
   - component: {fileID: 2913110194609856925}
   - component: {fileID: 6321052785335505066}
-  - component: {fileID: 5527404247640458428}
+  - component: {fileID: -3549688124188334626}
   m_Layer: 0
   m_Name: QuestionEvil
   m_TagString: Untagged
@@ -139,7 +139,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.65, y: 0.65}
   m_EdgeRadius: 0
---- !u!114 &5527404247640458428
+--- !u!114 &-3549688124188334626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,9 +148,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1253001146546504885}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e03bc9cd3d29b1f4e9b7f803e2fdb9b3, type: 3}
+  m_Script: {fileID: 11500000, guid: f121c5247a4113240900eb647474121b, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ItemBoxBehavior
+  m_EditorClassIdentifier: Assembly-CSharp::InvertedItemBlock
   Contains: {fileID: 0}
   Spawnspot: {fileID: 579371947034054754}
 --- !u!1 &6714672604076176243
