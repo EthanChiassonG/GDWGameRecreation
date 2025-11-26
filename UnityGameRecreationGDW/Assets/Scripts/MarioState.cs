@@ -68,9 +68,7 @@ public class MarioState : MonoBehaviour
             // Mario clearly above Goomba -> stomp
             if (marioY > goombaY + stompHeightOffset)
             {
-                Destroy(other);
-
-                // Bounce Mario upward a bit
+                Destroy(other);                // Bounce Mario upward a bit
                 if (rb != null)
                 {
                     rb.linearVelocity = new Vector2(rb.linearVelocity.x, stompBounceVelocity);

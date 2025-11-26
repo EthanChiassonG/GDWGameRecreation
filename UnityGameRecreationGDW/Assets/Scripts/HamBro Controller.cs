@@ -12,7 +12,6 @@ public class HamBroController : MonoBehaviour
 
     [Header("Horizontal Movement")]
     public float moveSpeed = 2f;
-    //public float maxMoveSpeed = 2f;
     public float moveSwitchInterval = 2f;
 
     [Header("Jumping")]
@@ -91,12 +90,5 @@ public class HamBroController : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x = Mathf.Abs(scale.x) * moveDirection;
         transform.localScale = scale;
-    }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Destroy(gameObject);
-        }
     }
 }

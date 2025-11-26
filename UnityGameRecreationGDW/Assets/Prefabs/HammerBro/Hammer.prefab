@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5399827314144032146}
   - component: {fileID: 2943532974762320876}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: HeadHammer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7020178841682551031}
   - component: {fileID: 8780889754673144570}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stripe2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,7 +190,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3332558980009554580}
   - component: {fileID: 2664888338282365911}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Stripe1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: -5175414254481996462}
   - component: {fileID: -3380129829951153972}
   - component: {fileID: 5111358085239158326}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Hammer
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -418,7 +418,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3139525172561390567}
   - component: {fileID: 3334651027392491816}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

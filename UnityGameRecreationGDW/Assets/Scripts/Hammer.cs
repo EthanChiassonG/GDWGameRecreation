@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Hammer : MonoBehaviour
 {
-    public float damage = 1;
-    public float lifeTime = 4f;
+    public float damage = 0.5f;
+    public float lifeTime = 1f;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
